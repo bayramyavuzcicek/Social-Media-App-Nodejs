@@ -68,12 +68,12 @@ router.put("/:id/follow",async(req,res)=>{
     //paramsdaki id current user body den gelen id takip edilecek user
     if(req.params.id  !==  req.body.userId){
         try {
-            const currentUser = await User.findById(req.params.id);   // current user
-            const user = await User.findById(req.body.userId);        // takip edilecek user
-            
+            const currentUser = await User.findById(req.body.userId); //
+            const user = await User.findById(req.params.id);
+
             // bu kullanıcı daha önceden takip edilmiş mi 
-            console.log(user.followers);
-            if(!currentUser.followings.includes(req.body.userId)){
+
+            if(!currentUser.followings.includes(req.params.id)){
                 await currentUser.updateOne({
                     $push:{
                         followings:user._id
@@ -103,10 +103,10 @@ router.put("/:id/follow",async(req,res)=>{
 router.put("/:id/unfollow", async (req,res)=>{
    if(req.params.id !== req.body.userId){
         try {
-            const currentUser = await User.findById(req.params.id);
-            const user = await User.findById(req.body.userId);
+            const currentUser = await User.findById(req.body.userId);
+            const user = await User.findById(req.params.id);
             
-            if(currentUser.followings.includes(req.body.userId)){
+            if(currentUser.followings.includes(req.params.id)){
                 await currentUser.updateOne({
                     $pull:{
                         followings:user._id
