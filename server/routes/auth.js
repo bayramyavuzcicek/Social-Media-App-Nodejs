@@ -8,8 +8,8 @@ const router = express.Router();
 router.post("/register", async (req,res)=>{
 
     //hashing the password
-    var salt = await bcrypt.genSaltSync(10);
-    var hashedPassword = await bcrypt.hashSync(req.body.password, salt);
+    const salt = await bcrypt.genSaltSync(10);
+    const hashedPassword = await bcrypt.hashSync(req.body.password, salt);
 
     //creating a new user
     const user = new User({
@@ -20,9 +20,9 @@ router.post("/register", async (req,res)=>{
 
     //save user
     try {
-        const result = await user.save();
-        !user &&  res.status(500).json("User has not been registered!");
-        return  res.status(200).json("User has been registered!");
+        const createdUser = await user.save();
+        !createdUser &&  res.status(500).json("User has not been registered!");
+        return  res.status(200).json(createdUser);
     } catch (error) {
         res.status(500).json(err)
     }
@@ -46,13 +46,6 @@ router.post('/login',async (req,res)=>{
         res.status(500).json(err)
     }
 })
-
-
-
-
-
-
-
 
 
 export default router;
