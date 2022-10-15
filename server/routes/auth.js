@@ -24,15 +24,32 @@ router.post("/register", async (req,res)=>{
         !user &&  res.status(500).json("User has not been registered!");
         return  res.status(200).json("User has been registered!");
     } catch (error) {
-        console.log(err);
+        res.status(500).json(err)
     }
     
 res.json(result);
 })
 
 //login
+router.post('/login',async (req,res)=>{
+   
+    try {
+        const user = await User.findOne({email:req.body.email});
+        !user && res.status(404).json("User not found")
+        
+        const isPassword = await bcrypt.compareSync(req.body.password, user.password);
+        !isPassword && res.status(404).json("Wrong Credentials")
+           
+        res.status(200).json("User has been logged in");
+            
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
 
-//logout
+
+
+
 
 
 
