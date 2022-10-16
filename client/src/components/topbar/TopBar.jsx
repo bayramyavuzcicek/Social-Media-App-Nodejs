@@ -1,10 +1,14 @@
 import './topBar.css'
 import {Search,Person,Chat,Notifications} from '@mui/icons-material';
+import SafetyDividerIcon from '@mui/icons-material/SafetyDivider';
 export default function Topbar() {
   return (
     <div className="topBar">
      <div className="topBarLeft">
-      <span className="logo">YavuzSocial</span>
+      
+        
+      
+      <span className="logo"><SafetyDividerIcon className='topBarRightLogo'/>SocialMediaApp</span>
      </div>
      <div className="topBarCenter">
       <div className="searchBar">
