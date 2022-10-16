@@ -1,6 +1,8 @@
 import "./sideBar.css";
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import {Group , Chat, HelpOutline , Event , School , WorkOutline , PlayCircleFilledOutlined , RssFeed} from '@mui/icons-material'
+import CloseFriends from "../closeFriends/CloseFriends";
+import {Users} from '../../dummyData.js'
 export default function SideBar() {
   return (
     <div className="sideBar">
@@ -46,34 +48,11 @@ export default function SideBar() {
         <button className="sideBarButton">Show More</button>
         <hr className="sideBarHr"/>
         <ul className="sideBarFriendList">
-          <li className="sideBarFriend">
-            <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
-          </li>
-          <li className="sideBarFriend">
-            <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
-          </li>
-          <li className="sideBarFriend">
-            <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
-          </li>
-          <li className="sideBarFriend">
-            <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
-          </li>
-          <li className="sideBarFriend">
-            <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
-          </li>
-          <li className="sideBarFriend">
-            <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
-          </li>
-          <li className="sideBarFriend">
-            <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
-          </li>
+          {Users.map(u=>(
+            <CloseFriends key={u.id} user={u}/>
+          ))}
+          
+          
         </ul>
       </div>
     </div>
