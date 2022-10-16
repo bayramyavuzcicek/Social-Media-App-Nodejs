@@ -48,31 +48,31 @@ export default function SideBar() {
         <ul className="sideBarFriendList">
           <li className="sideBarFriend">
             <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Emin Kartcı</span>
+            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
           </li>
           <li className="sideBarFriend">
             <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Emin Kartcı</span>
+            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
           </li>
           <li className="sideBarFriend">
             <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Emin Kartcı</span>
+            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
           </li>
           <li className="sideBarFriend">
             <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Emin Kartcı</span>
+            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
           </li>
           <li className="sideBarFriend">
             <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Emin Kartcı</span>
+            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
           </li>
           <li className="sideBarFriend">
             <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Emin Kartcı</span>
+            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
           </li>
           <li className="sideBarFriend">
             <img src="assets/person/2.jpeg" alt="" className="sideBarFriendImg"/>
-            <span className="sideBarFriendName">Emin Kartcı</span>
+            <span className="sideBarFriendName">Bayram Yavuz ÇİÇEK</span>
           </li>
         </ul>
       </div>
