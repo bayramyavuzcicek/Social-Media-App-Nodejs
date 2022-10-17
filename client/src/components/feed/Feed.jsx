@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 
 
-export default function Feed() {
+export default function Feed({username}) {
 
   //create useState hook
   const [posts ,setPosts] = useState([]);
@@ -16,12 +16,14 @@ export default function Feed() {
   useEffect(()=>{
     const fetchPosts = async()=>{
       axios.defaults.baseURL="http://localhost:5000/api/"
-      const res = await axios.get("posts/timeline/634a6bd0bd6d82abb1cc4fc3");
+      const res = username 
+      ? await axios.get("posts/profile/"+username)
+      : await axios.get("posts/timeline/634a6bd0bd6d82abb1cc4fc3");
       //setPosts(res.data);
       setPosts(res.data)
     }
     fetchPosts();
-  },[])
+  },[username])
 
   return (
     <div className="feed">
