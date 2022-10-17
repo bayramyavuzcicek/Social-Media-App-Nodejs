@@ -4,10 +4,11 @@ import Online from "../online/Online"
 export default function RightBar({ profile }) {
 
   const HomeRightBar = () => {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     return (
       <>
         <div className="birthdayContainer">
-          <img className="birthdayImg" src="assets/gift.png" alt="" />
+          <img className="birthdayImg" src={`${PF}gift.png`} alt="" />
           <span className="birthdayText">Bugün <b>Emin Kartcı</b> ve <b>3 diğer arkadaşının</b> doğum günü. </span>
         </div>
         <img src="assets/ad.png" alt="" className="rightBarAd" />

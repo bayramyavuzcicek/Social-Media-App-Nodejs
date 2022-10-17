@@ -4,6 +4,7 @@ import SideBar from '../../components/sidebar/SideBar'
 import Feed from '../../components/feed/Feed'
 import RightBar from '../../components/rightbar/RightBar'
 export default function Profile() {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     return (
         <>
             <TopBar />
@@ -12,8 +13,8 @@ export default function Profile() {
                 <div className="profileRight">
                     <div className="profileRightTop">
                         <div className="profileCover">
-                            <img className='profileCoverImg' src="assets/post/3.jpeg" alt="" />
-                            <img className='profileUserImg' src="assets/person/avatar.png" alt="" />
+                            <img className='profileCoverImg' src={`${PF}post/3.jpeg`} alt="" />
+                            <img className='profileUserImg' src={`${PF}person/avatar.png`} alt="" />
                         </div>
                         <div className="profileInfo">
                             <h4 className='profileInfoName'>Bayram Yavuz ÇİÇEK</h4>
