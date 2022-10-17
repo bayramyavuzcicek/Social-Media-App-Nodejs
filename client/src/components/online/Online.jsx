@@ -1,4 +1,3 @@
-import { Users } from '../../dummyData';
 import './online.css';
 
 export default function Online({user}) {

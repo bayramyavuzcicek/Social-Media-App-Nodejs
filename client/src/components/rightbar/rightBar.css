@@ -27,3 +27,41 @@
 .rightBarTitle{
     margin-bottom: 20px;
 }
+.rightBarTitle{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.rightBarInfo{
+    margin-bottom: 30px;
+}
+.rightBarInfoItem{
+    margin-bottom: 10px;
+}
+.rigtBarInfoKey{
+    font-weight: 500;
+    margin-right: 15px;
+    color:#555;
+}
+.rigtBarInfoValue{
+    font-weight: 300;
+}
+.rightBarFollowings{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+}
+.rightBarFollowing{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.rightBarFollowingImg{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
