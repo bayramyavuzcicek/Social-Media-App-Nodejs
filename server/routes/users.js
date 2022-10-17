@@ -47,7 +47,7 @@ router.delete("/:id",async(req,res)=>{
 
 
 //get a user
-router.get("/:id/follow",async(req,res)=>{
+router.get("/:id",async(req,res)=>{
     try {
         const user = await User.findById(req.params.id);
         !user && res.status(404).json("user not found");
