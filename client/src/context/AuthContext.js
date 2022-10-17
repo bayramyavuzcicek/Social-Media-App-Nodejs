@@ -3,7 +3,16 @@ import AuthReducer from './AuthReducer';
 
 // Başlangıç State Yazılır
 const INITIAL_STATE = {
-    user: null,   // ilk etapta kullanıcı yok
+    user: {
+        _id:"634d60f1fae18c34b177e9ce",
+        username: "test",
+        email: "test@test.com",
+        profilePicture : "",
+        coverPicture : "person/1.jpeg",
+        followers:[],
+        followings:[],
+        isAdmin:false,
+    },   // ilk etapta kullanıcı yok
     isFetching: false, // ilk etapta veri getirilmiyor
     error: false // ilk etapta herhangi bir hata yok
 };

@@ -2,8 +2,9 @@ import Post from "../post/Post"
 import Share from "../share/Share"
 import "./feed.css"
 import axios from 'axios';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useEffect } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 
 
@@ -12,18 +13,19 @@ export default function Feed({username}) {
   //create useState hook
   const [posts ,setPosts] = useState([]);
 
+  const {user} = useContext(AuthContext)
   //create useEffect when the page refreshed this part will gonna work
   useEffect(()=>{
     const fetchPosts = async()=>{
       axios.defaults.baseURL="http://localhost:5000/api/"
       const res = username 
       ? await axios.get("posts/profile/"+username)
-      : await axios.get("posts/timeline/634a6bd0bd6d82abb1cc4fc3");
+      : await axios.get("posts/timeline/"+user._id);
       //setPosts(res.data);
       setPosts(res.data)
     }
     fetchPosts();
-  },[username])
+  },[username,user._id])
 
   return (
     <div className="feed">
