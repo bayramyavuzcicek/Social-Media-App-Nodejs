@@ -4,9 +4,9 @@ import AuthReducer from './AuthReducer';
 // Başlangıç State Yazılır
 const INITIAL_STATE = {
     user: {
-        _id:"634d6e9b30d8a83cdfa986e2",
-        username: "emin",
-        email: "emin@gmail.com",
+        _id:"634d60f1fae18c34b177e9ce",
+        username: "test",
+        email: "test@gmail.com",
         profilePicture : "",
         coverPicture : "person/1.jpeg",
         city: "Antalya",
