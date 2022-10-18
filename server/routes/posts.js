@@ -12,7 +12,7 @@ router.post("/", async(req,res)=>{
         const createadPost = await newPost.save(); 
         res.status(200).json(createadPost);
     } catch (err) {
-        res.status(500).json(err)
+        res.status(500).json(err) 
     }
 });
 
@@ -96,11 +96,11 @@ router.get("/:id", async(req,res)=>{
 
 //Get timeline posts
 
-router.get("/timeline/all", async(req,res)=>{
+router.get("/timeline/:userId", async(req,res)=>{
     
    try {
          //current user
-        const currentUser = await User.findById(req.body.userId);
+        const currentUser = await User.findById(req.params.userId);
        
         //currentuser posts
         const userPosts = await Post.find({userId:currentUser._id});
@@ -119,5 +119,23 @@ router.get("/timeline/all", async(req,res)=>{
 
 
 })
+
+// get user's all posts
+
+router.get("/profile/:username", async(req,res)=>{
+    
+    try {
+         const user = await User.findOne({username:req.params.username})
+         const posts = await Post.find({userId:user._id})
+
+         res.status(200).json(posts)
+    
+    } catch (err) {
+         res.status(500).json(err)
+    }
+ 
+ 
+ })
+ 
 
 export default router;
