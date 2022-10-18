@@ -135,8 +135,17 @@ router.put("/:id/unfollow", async (req,res)=>{
    }
 })
 
+//get friends 
+router.get("/friends" , async (req,res)=>{
 
-
+    try {
+        const user = await User.findById(req.body.userId);
+        const userFriends = user.followings;
+        res.status(200).json(userFriends);
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
 
 
 
