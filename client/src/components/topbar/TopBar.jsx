@@ -7,8 +7,9 @@ import { useContext } from 'react';
 export default function Topbar() {
 
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  
   const {user} = useContext(AuthContext)
-  console.log(user)
+ 
   return (
     <div className="topBar">
       <div className="topBarLeft">

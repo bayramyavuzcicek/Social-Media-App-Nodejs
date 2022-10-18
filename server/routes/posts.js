@@ -12,7 +12,7 @@ router.post("/", async(req,res)=>{
         const createadPost = await newPost.save(); 
         res.status(200).json(createadPost);
     } catch (err) {
-        res.status(500).json(err)
+        res.status(500).json(err) 
     }
 });
 
